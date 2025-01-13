@@ -1,5 +1,4 @@
 import torch
-np.set_printoptions(precision=3)
 
 #initialize
 targets = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,.9]
@@ -23,7 +22,7 @@ while count < runs:
     total_error = torch.sum(torch.pow(torch.subtract(activated_tensor,target_tensor),2))/2
     print(total_error)
 
-    #calculate activation derivates
+    #calculate activation derivatives
     a = torch.exp(-output_tensor)
     b = torch.exp(output_tensor)
     c = sum(a,b)
